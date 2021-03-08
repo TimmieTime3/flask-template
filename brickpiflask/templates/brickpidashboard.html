@@ -9,15 +9,16 @@
 	<div id="stats" class="row"> <!-- recurring function - use json to fetch the voltage, currentcommand and current routine -->
     </div>
 	<div id="dashboard">
-	<div class="row text-center fitrow">
-		<div class="col-4">
-			<button type="button" class="btn btn-success" onclick="JSONrequest('brickpistart','POST')">Start</button>
-		</div>
-		<div class="col-4">
-			<button type="button" class="btn btn-danger" onclick="JSONrequest('brickpistop','POST')">Stop</button>
-		</div>
-		<div class="col-4">
-			<button type="button" class="btn btn-dark" onclick="hideelement('dashboard'); JSONrequest('brickpishutdown','POST', brickpishutdownhandler);">Shutdown Robot</button>
+		<div class="row text-center fitrow">
+			<div class="col-4">
+				<button type="button" class="btn btn-success" onclick="JSONrequest('brickpistart','POST')">Start</button>
+			</div>
+			<div class="col-4">
+				<button type="button" class="btn btn-danger" onclick="JSONrequest('brickpistop','POST')">Stop</button>
+			</div>
+			<div class="col-4">
+				<button type="button" class="btn btn-dark" onclick="hideelement('dashboard'); JSONrequest('brickpishutdown','POST', brickpishutdownhandler);">Shutdown Robot</button>
+			</div>
 		</div>
 	</div>
 </div>

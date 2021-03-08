@@ -33,7 +33,7 @@ def brickpisensorview():
     if BRICKPI == None:
         flash("Brick PI is not yet loaded!!")
         return redirect(url_for('brickpiblueprint.brickpidashboard'))
-    return render_template('brickpisensorview.html', sensordata=BRICKPI.get_all_sensors()) #hides or shows controls
+    return render_template('brickpisensorview.html', data=BRICKPI.get_all_sensors()) 
 
 # turtle demo
 @brickpiblueprint.route('/brickpiturtle', methods=['GET','POST'])
@@ -59,7 +59,7 @@ def brickpiload():
         if BRICKPI:
             bp = BRICKPI.BP #alias to shorten code
             motorports = {'rightmotor':bp.PORT_B, 'leftmotor':bp.PORT_C, 'mediummotor':bp.PORT_D }
-            sensorports =  { 'thermal':bp.PORT_2,'colour':bp.PORT_1,'ultra':bp.PORT_4,'imu':1 }
+            sensorports =  { 'thermal':bp.PORT_2, 'colour':bp.PORT_1,'ultra':bp.PORT_4,'imu':1 }
             BRICKPI.configure_sensors(motorports,sensorports) #should take 4 secs
             if BRICKPI.Configured:
                 sensordict = BRICKPI.get_all_sensors()
